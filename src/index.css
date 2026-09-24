@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #FAF8F5;
+    --bg-card: #FFFFFF;
+    --bg-card-glass: rgba(255, 255, 255, 0.85);
+    --text-primary: #2C241E;
+    --text-muted: #7A6F66;
+    --gold-primary: #C69A39;
+    --gold-light: #DFBF77;
+    --gold-dark: #97711B;
+    --accent-emerald: #2E4F4F;
+    --accent-rose: #C88383;
+    --border-gold: rgba(198, 154, 57, 0.25);
+  }
+
+  .dark {
+    --bg-primary: #121110;
+    --bg-card: #1D1A17;
+    --bg-card-glass: rgba(29, 26, 23, 0.85);
+    --text-primary: #F5EFEB;
+    --text-muted: #A89F96;
+    --gold-primary: #D4AF37;
+    --gold-light: #F3E5AB;
+    --gold-dark: #AA820A;
+    --accent-emerald: #3A6351;
+    --accent-rose: #E29797;
+    --border-gold: rgba(212, 175, 55, 0.28);
+  }
+
+  body {
+    font-family: 'Cairo', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.4s ease, color 0.4s ease;
+    overflow-x: hidden;
+  }
+
+  /* Luxury typography helpers */
+  .font-amiri {
+    font-family: 'Amiri', serif;
+  }
+  .font-cairo {
+    font-family: 'Cairo', sans-serif;
+  }
+  .font-tajawal {
+    font-family: 'Tajawal', sans-serif;
+  }
+  .font-playfair {
+    font-family: 'Playfair Display', serif;
+  }
+  .font-script {
+    font-family: 'Alex Brush', cursive;
+  }
+}
+
+/* Luxury gold gradients and shimmer */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #D4AF37 0%, #F5E29D 40%, #AA820A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #C69A39 0%, #DFBF77 50%, #97711B 100%);
+}
+
+.glass-nav {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.55);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+/* Print specific styles for the invitation */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printable-invitation, #printable-invitation * {
+    visibility: visible;
+  }
+  #printable-invitation {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 20px;
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+}

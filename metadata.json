@@ -1,0 +1,6 @@
+{
+  "name": "موقع ودعوة زفاف ملكية فاخرة | Luxury Wedding & RSVP",
+  "description": "موقع زفاف رقمي متكامل وعصري مع دعوة إلكترونية، عداد تنازلي، تأكيد حضور RSVP، معرض صور، جدول زمني، وقسم ديجي وموسيقى.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
